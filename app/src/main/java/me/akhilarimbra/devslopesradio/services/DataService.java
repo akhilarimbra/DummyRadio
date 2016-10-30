@@ -23,7 +23,7 @@ public class DataService {
         ArrayList<Station> list = new ArrayList<>();
 
         list.add(new Station("Flight Plan (Tunes for travel)", "flightplanmusic"));
-        list.add(new Station("Two-Wheenlin (Biking Playlist)", "bicylemusic"));
+        list.add(new Station("Two-Wheenlin (Biking Playlist)", "bicyclemusic"));
         list.add(new Station("Kids Jams (Music for Children)", "kidsmusic"));
 
         return list;
@@ -33,8 +33,9 @@ public class DataService {
 
         ArrayList<Station> list = new ArrayList<>();
 
+        list.add(new Station("Recent Kids Jams (Music for Children)", "kidsmusic"));
         list.add(new Station("Recent Flight Plan (Tunes for travel)", "flightplanmusic"));
-        list.add(new Station("Recent Two-Wheenlin (Biking Playlist)", "bicylemusic"));
+        list.add(new Station("Recent Two-Wheenlin (Biking Playlist)", "bicyclemusic"));
 
         return list;
     }
@@ -45,7 +46,7 @@ public class DataService {
         ArrayList<Station> list = new ArrayList<>();
 
         list.add(new Station("Party Flight Plan (Tunes for travel)", "flightplanmusic"));
-        list.add(new Station("Party Two-Wheenlin (Biking Playlist)", "bicylemusic"));
+        list.add(new Station("Party Two-Wheenlin (Biking Playlist)", "bicyclemusic"));
         list.add(new Station("Party Kids Jams (Music for Children)", "kidsmusic"));
 
         return list;

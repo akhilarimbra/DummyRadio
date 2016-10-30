@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import me.akhilarimbra.devslopesradio.R;
+import me.akhilarimbra.devslopesradio.activities.MainActivity;
 import me.akhilarimbra.devslopesradio.holders.StationViewHolder;
 import me.akhilarimbra.devslopesradio.model.Station;
 
@@ -24,10 +25,18 @@ public class StationsAdapter extends RecyclerView.Adapter<StationViewHolder> {
 
     @Override
     public void onBindViewHolder(StationViewHolder holder, int position) {
-        Station station = stations.get(position);
+        final Station station = stations.get(position);
         holder.updateUI(station);
 
+        final int p = position;
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Load the DetailsScreen
+                MainActivity .getMainActivity().loadDetailsScreen(station);
+            }
+        });
     }
 
     @Override

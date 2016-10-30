@@ -1,5 +1,6 @@
 package me.akhilarimbra.devslopesradio.fragments;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -73,6 +74,7 @@ public class StationsFragment extends Fragment {
         } else {
             adapter = new StationsAdapter(DataService.getInstance().getPartyStations());
         }
+        recyclerView.addItemDecoration(new HorizontalSpaceItemDecorator(30));
         recyclerView.setAdapter(adapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -81,4 +83,18 @@ public class StationsFragment extends Fragment {
         return v;
     }
 
+}
+
+class HorizontalSpaceItemDecorator extends RecyclerView.ItemDecoration {
+    private final int spacer;
+
+    public HorizontalSpaceItemDecorator(int spacer) {
+        this.spacer = spacer;
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
+        outRect.right = spacer;
+    }
 }
